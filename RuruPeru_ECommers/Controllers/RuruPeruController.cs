@@ -20,6 +20,10 @@ namespace RuruPeru_ECommers.Controllers
         public ActionResult Index()
         {
 
+            /*
+
+            Prueba de funcionamiento de "Realizar Venta"
+
             string idcli = "CLI00001";
 
             List<ItemProducto> items = new List<ItemProducto>();
@@ -37,10 +41,12 @@ namespace RuruPeru_ECommers.Controllers
                 cantidadProducto = 5
             });
 
-            System.Diagnostics.Debug.WriteLine(service.RealizarVenta(idcli, items.ToArray()));
+            System.Diagnostics.Debug.WriteLine(service.RealizarVenta(idcli, items.ToArray()));*/
 
             return View(service.ListarProductos());
         }
+
+        //  Prueba de funcionamiento de "Actualizar Stock"
 
         public ActionResult Stock(string id)
         {
