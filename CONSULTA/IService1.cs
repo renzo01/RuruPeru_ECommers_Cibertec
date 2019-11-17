@@ -22,6 +22,8 @@ namespace CONSULTA
         List<Producto> ListarProductos();
         [OperationContract]
         List<Categoria> ListaCategoriaProd();
+        [OperationContract]
+        List<EstadoUsuario> ListarEstadoUsuario();
     }
     // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
     [DataContract]
@@ -32,11 +34,11 @@ namespace CONSULTA
         [DataMember]
         public string nomUsuario { get; set; }
         [DataMember]
-        public Int16 idDistrito { get; set; }
+        public string nomDistrito { get; set; }
         [DataMember]
         public string fotoUsuario { get; set; }
         [DataMember]
-        public Int16 idEstado { get; set; }
+        public string descripcionEstado { get; set; }
     }
     public class Cliente
     {
@@ -52,7 +54,7 @@ namespace CONSULTA
         [DataMember]
         public DateTime fechaNacCliente { get; set; }
         [DataMember]
-        public Int16 idEstado { get; set; }
+        public string descripcionEstado { get; set; }
         [DataMember]
         public string fotoUsuario { get; set; }
     }
@@ -70,12 +72,16 @@ namespace CONSULTA
         [DataMember] public decimal precioProducto { get; set; }
         [DataMember] public Int32 stockProducto { get; set; }
         [DataMember] public string imgProducto { get; set; }
-        [DataMember] public Int16 idCategoria { get; set; }
+        [DataMember] public string descripcionCategoria { get; set; }
         [DataMember] public string idProveedor { get; set; }
 
     }
     public class Categoria{
         [DataMember] public Int16 idCategoria { get; set; }
         [DataMember] public string descripcionCategoria { get; set; }
+    }
+    public class EstadoUsuario { 
+        [DataMember] public Int16 idEstadoUsuario { get; set; }
+        [DataMember] public string descripcionEstado { get; set; }
     }
 }
