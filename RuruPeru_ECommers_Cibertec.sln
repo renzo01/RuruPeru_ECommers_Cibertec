@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuruPeru_ECommers", "RuruPeru_ECommers\RuruPeru_ECommers.csproj", "{89C8ACAB-8354-4677-86AE-63A6550E512C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A5EA06E-8E66-4AA1-80A6-19B34AAAD0D0} = {5A5EA06E-8E66-4AA1-80A6-19B34AAAD0D0}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADO.NET", "ADO.NET", "{E599FBC9-6C2E-4679-AD00-33408E66EC4A}"
 EndProject
