@@ -1,0 +1,57 @@
+﻿@model IEnumerable<RuruPeru_ECommers.ServiceReference1.Proveedor>
+
+@{
+    ViewBag.Title = "IndexProveedor";
+}
+
+<h2>IndexProveedor</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcionProveedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dniProveedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idProveedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rucProveedor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcionProveedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dniProveedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idProveedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rucProveedor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
