@@ -19,5 +19,13 @@ namespace RuruPeru_ECommers.Controllers
         {
             return View(servicioConsulta.ListarProductos());
         }
+        public ActionResult IndexProveedor() {
+            return View(servicioConsulta.ListarProveedor());
+        }
+        public ActionResult IndexUsuario()
+        {
+            return View(servicioConsulta.ListarUsuarios());
+        }
+        
     }
 }
