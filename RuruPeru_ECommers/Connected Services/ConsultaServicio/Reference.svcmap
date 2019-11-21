@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="55fc8a8a-3df9-40b2-8b31-9bce3f443fd4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60716/Consulta.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Consulta.xsd" MetadataType="Schema" ID="265c376c-9a78-462b-88ab-909e9710079d" SourceId="1" SourceUrl="http://localhost:60716/Consulta.svc?xsd=xsd2" />
+    <MetadataFile FileName="Consulta1.xsd" MetadataType="Schema" ID="e437be3b-37b6-4037-9200-1cbf84d7c87d" SourceId="1" SourceUrl="http://localhost:60716/Consulta.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="3041930c-e090-4732-ae07-2f8bb768eefa" SourceId="1" SourceUrl="http://localhost:60716/Consulta.svc?wsdl" />
+    <MetadataFile FileName="Consulta2.xsd" MetadataType="Schema" ID="7ae8d802-4675-4dd8-a20e-3c26d74e778d" SourceId="1" SourceUrl="http://localhost:60716/Consulta.svc?xsd=xsd1" />
+    <MetadataFile FileName="Consulta.disco" MetadataType="Disco" ID="18830985-0e04-4711-97f5-ce5d7ea03ec6" SourceId="1" SourceUrl="http://localhost:60716/Consulta.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
