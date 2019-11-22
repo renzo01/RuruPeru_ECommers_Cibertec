@@ -90,7 +90,11 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListarProveedor">
+<<<<<<< HEAD
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarProveedor" style="document" />
+=======
       <soap:operation soapAction="http://tempuri.org/Consulta/ListarProveedor" style="document" />
+>>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -99,7 +103,11 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListarProductos">
+<<<<<<< HEAD
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarProductos" style="document" />
+=======
       <soap:operation soapAction="http://tempuri.org/Consulta/ListarProductos" style="document" />
+>>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -107,8 +115,13 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+<<<<<<< HEAD
+    <wsdl:operation name="ActualizarStock">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActualizarStock" style="document" />
+=======
     <wsdl:operation name="ListaCategoriaProd">
       <soap:operation soapAction="http://tempuri.org/Consulta/ListaCategoriaProd" style="document" />
+>>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -116,8 +129,13 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+<<<<<<< HEAD
+    <wsdl:operation name="RealizarVenta">
+      <soap:operation soapAction="http://tempuri.org/IService1/RealizarVenta" style="document" />
+=======
     <wsdl:operation name="ListarEstadoUsuario">
       <soap:operation soapAction="http://tempuri.org/Consulta/ListarEstadoUsuario" style="document" />
+>>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -127,8 +145,13 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service1">
+<<<<<<< HEAD
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:60716/Service1.svc" />
+=======
     <wsdl:port name="BasicHttpBinding_Consulta" binding="tns:BasicHttpBinding_Consulta">
       <soap:address location="http://localhost:60716/Consulta.svc" />
+>>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

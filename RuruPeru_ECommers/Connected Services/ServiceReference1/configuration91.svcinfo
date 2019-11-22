@@ -112,10 +112,17 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
+<<<<<<< HEAD
+    <endpoint name="BasicHttpBinding_IService1" contract="ServiceReference1.IService1" bindingType="basicHttpBinding" address="http://localhost:60716/Service1.svc" bindingConfiguration="BasicHttpBinding_IService1">
+      <properties>
+        <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>http://localhost:60716/Service1.svc</serializedValue>
+=======
     <endpoint name="BasicHttpBinding_Consulta" contract="ServiceReference1.Consulta" bindingType="basicHttpBinding" address="http://localhost:60716/Consulta.svc" bindingConfiguration="BasicHttpBinding_Consulta">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:60716/Consulta.svc</serializedValue>
+>>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -124,10 +131,17 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+<<<<<<< HEAD
+          <serializedValue>BasicHttpBinding_IService1</serializedValue>
+        </property>
+        <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>ServiceReference1.IService1</serializedValue>
+=======
           <serializedValue>BasicHttpBinding_Consulta</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>ServiceReference1.Consulta</serializedValue>
+>>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -187,7 +201,11 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+<<<<<<< HEAD
+          <serializedValue>BasicHttpBinding_IService1</serializedValue>
+=======
           <serializedValue>BasicHttpBinding_Consulta</serializedValue>
+>>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

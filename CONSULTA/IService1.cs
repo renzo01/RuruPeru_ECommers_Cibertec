@@ -9,18 +9,20 @@ using System.Text;
 namespace CONSULTA
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
+
     [ServiceContract]
     public interface Consulta
     {
-        [OperationContract]
-        List<Usuario> ListarUsuarios();
+
         [OperationContract]
         List<Cliente> ListarClientes();
+
         [OperationContract]
         List<Proveedor> ListarProveedor();
         [OperationContract]
         List<Producto> ListarProductos();
         [OperationContract]
+
         List<Categoria> ListaCategoriaProd();
         [OperationContract]
         List<EstadoUsuario> ListarEstadoUsuario();
@@ -46,39 +48,70 @@ namespace CONSULTA
         [DataMember]
         public string idCliente { get; set; }
         [DataMember]
-        public string idUsuario { get; set; }
-        [DataMember]
-        public string nomUsuario { get; set; }
-        [DataMember]
         public string apeCliente { get; set; }
         [DataMember]
-        public DateTime fechaNacCliente { get; set; }
+        public string fechaNacCliente { get; set; }
         [DataMember]
+
         public string descripcionEstado { get; set; }
         [DataMember]
         public string fotoUsuario { get; set; }
     }
-    public class Proveedor {
-        [DataMember] public string idProveedor { get; set; }
-        [DataMember] public string idUsuario { get; set; }
-        [DataMember] public string descripcionProveedor { get; set; }
-        [DataMember] public string rucProveedor { get; set; }
-        [DataMember] public string dniProveedor { get; set; }
+    [DataContract]
+    public class Proveedor
+    {
+        [DataMember] public string idProv { get; set; }
+        [DataMember] public string nomProv { get; set; }
     }
-    public class Producto {
+    [DataContract]
+    public class Producto
+    {
+
         [DataMember] public string idProducto { get; set; }
         [DataMember] public string tituloProducto { get; set; }
         [DataMember] public string descripcionProducto { get; set; }
         [DataMember] public decimal precioProducto { get; set; }
-        [DataMember] public Int32 stockProducto { get; set; }
+        [DataMember] public int stockProducto { get; set; }
         [DataMember] public string imgProducto { get; set; }
         [DataMember] public string descripcionCategoria { get; set; }
         [DataMember] public string idProveedor { get; set; }
+    }
+    [DataContract]
+    public class ItemProducto
+    {
+        [DataMember] public string idProducto { get; set; }
+        [DataMember] public int cantidadProducto { get; set; }
+        [DataMember] public decimal precioProducto { get; set; }
+        [DataMember]
+        public decimal monto
+        {
+            get
+            {
+                return precioProducto * cantidadProducto;
+            }
+            set
+            {
+
+            }
+        }
+    }
+    [DataContract]
+    public class Factura
+    {
+        [DataMember] public string idFactura { get; set; }
+        [DataMember] public decimal montoTotal { get; set; }
+        [DataMember] public string fechaFactura { get; set; }
+        [DataMember] public int idEstadoFactura { get; set; }
+        [DataMember] public string idCliente { get; set; }
 
     }
-    public class Categoria{
-        [DataMember] public Int16 idCategoria { get; set; }
-        [DataMember] public string descripcionCategoria { get; set; }
+    [DataContract]
+    public class DetalleFactura
+    {
+        [DataMember] public int numDetalleFac { get; set; }
+        [DataMember] public string idProducto { get; set; }
+        [DataMember] public int cantidadProducto { get; set; }
+
     }
     public class EstadoUsuario { 
         [DataMember] public Int16 idEstadoUsuario { get; set; }
