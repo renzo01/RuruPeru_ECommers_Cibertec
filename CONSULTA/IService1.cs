@@ -11,7 +11,7 @@ namespace CONSULTA
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
 
     [ServiceContract]
-    public interface IService1
+    public interface Consulta
     {
 
         [OperationContract]
@@ -22,12 +22,26 @@ namespace CONSULTA
         [OperationContract]
         List<Producto> ListarProductos();
         [OperationContract]
-        string ActualizarStock(ItemProducto reg);
+
+        List<Categoria> ListaCategoriaProd();
         [OperationContract]
-        string RealizarVenta(string idCliente, List<ItemProducto> items);
+        List<EstadoUsuario> ListarEstadoUsuario();
     }
     // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
     [DataContract]
+    public class Usuario
+    {
+        [DataMember]
+        public string idUsuario { get; set; }
+        [DataMember]
+        public string nomUsuario { get; set; }
+        [DataMember]
+        public string nomDistrito { get; set; }
+        [DataMember]
+        public string fotoUsuario { get; set; }
+        [DataMember]
+        public string descripcionEstado { get; set; }
+    }
     public class Cliente
     {
 
@@ -38,8 +52,10 @@ namespace CONSULTA
         [DataMember]
         public string fechaNacCliente { get; set; }
         [DataMember]
-        public string idUsuario { get; set; }
 
+        public string descripcionEstado { get; set; }
+        [DataMember]
+        public string fotoUsuario { get; set; }
     }
     [DataContract]
     public class Proveedor
@@ -57,7 +73,7 @@ namespace CONSULTA
         [DataMember] public decimal precioProducto { get; set; }
         [DataMember] public int stockProducto { get; set; }
         [DataMember] public string imgProducto { get; set; }
-        [DataMember] public int idCategoria { get; set; }
+        [DataMember] public string descripcionCategoria { get; set; }
         [DataMember] public string idProveedor { get; set; }
     }
     [DataContract]
@@ -97,6 +113,8 @@ namespace CONSULTA
         [DataMember] public int cantidadProducto { get; set; }
 
     }
-
-
+    public class EstadoUsuario { 
+        [DataMember] public Int16 idEstadoUsuario { get; set; }
+        [DataMember] public string descripcionEstado { get; set; }
+    }
 }
