@@ -90,4 +90,8 @@ namespace CONSULTA
         [DataMember] public Int16 idEstadoUsuario { get; set; }
         [DataMember] public string descripcionEstado { get; set; }
     }
+    public class EstadoUsuario { 
+        [DataMember] public Int16 idEstadoUsuario { get; set; }
+        [DataMember] public string descripcionEstado { get; set; }
+    }
 }

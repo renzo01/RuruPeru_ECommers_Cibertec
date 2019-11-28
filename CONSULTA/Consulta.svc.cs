@@ -1,6 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.ServiceModel.Web;
+using System.Text;
+
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
@@ -12,8 +18,6 @@ namespace CONSULTA
     public class Service1 : Consulta
     {
         SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["RuruPeru_DB"].ConnectionString);
-
-
         public List<Categoria> ListaCategoriaProd()
         {
             List<Categoria> temp = new List<Categoria>();
@@ -54,6 +58,7 @@ namespace CONSULTA
                 };
                 temp.Add(reg);
             }
+
             dr.Close(); cn.Close();
             return temp;
         }
@@ -65,6 +70,7 @@ namespace CONSULTA
             cmd.CommandType = CommandType.StoredProcedure;
             cn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
+
             while (dr.Read())
             {
                 EstadoUsuario reg = new EstadoUsuario()
@@ -85,6 +91,7 @@ namespace CONSULTA
             cmd.CommandType = CommandType.StoredProcedure;
             cn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
+
             while (dr.Read())
             {
                 Producto reg = new Producto()
@@ -111,6 +118,7 @@ namespace CONSULTA
             cmd.CommandType = CommandType.StoredProcedure;
             cn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
+
             while (dr.Read())
             {
                 Proveedor reg = new Proveedor()
@@ -136,6 +144,7 @@ namespace CONSULTA
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
+
                 Usuario reg = new Usuario()
                 {
                     idUsuario = dr.GetString(0),
