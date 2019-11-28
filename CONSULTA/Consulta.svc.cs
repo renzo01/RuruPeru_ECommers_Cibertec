@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
@@ -23,7 +25,8 @@ namespace CONSULTA
             cmd.CommandType = CommandType.StoredProcedure;
             cn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read()) {
+            while (dr.Read())
+            {
                 Categoria reg = new Categoria
                 {
                     idCategoria = dr.GetInt16(0),
@@ -36,12 +39,13 @@ namespace CONSULTA
 
         public List<Cliente> ListarClientes()
         {
-            List<Cliente> temp =  new List<Cliente>();
-            SqlCommand cmd =  new SqlCommand("usp_listar_Cliente",cn);
+            List<Cliente> temp = new List<Cliente>();
+            SqlCommand cmd = new SqlCommand("usp_listar_Cliente", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read()) {
+            while (dr.Read())
+            {
                 Cliente reg = new Cliente()
                 {
                     idCliente = dr.GetString(0),
@@ -54,7 +58,8 @@ namespace CONSULTA
                 };
                 temp.Add(reg);
             }
-            dr.Close();cn.Close();
+
+            dr.Close(); cn.Close();
             return temp;
         }
 
@@ -65,7 +70,9 @@ namespace CONSULTA
             cmd.CommandType = CommandType.StoredProcedure;
             cn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read()) {
+
+            while (dr.Read())
+            {
                 EstadoUsuario reg = new EstadoUsuario()
                 {
                     idEstadoUsuario = dr.GetInt16(0),
@@ -84,7 +91,9 @@ namespace CONSULTA
             cmd.CommandType = CommandType.StoredProcedure;
             cn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read()) {
+
+            while (dr.Read())
+            {
                 Producto reg = new Producto()
                 {
                     idProducto = dr.GetString(0),
@@ -109,7 +118,9 @@ namespace CONSULTA
             cmd.CommandType = CommandType.StoredProcedure;
             cn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read()) {
+
+            while (dr.Read())
+            {
                 Proveedor reg = new Proveedor()
                 {
                     idProveedor = dr.GetString(0),
@@ -131,7 +142,9 @@ namespace CONSULTA
             cmd.CommandType = CommandType.StoredProcedure;
             cn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read()) {
+            while (dr.Read())
+            {
+
                 Usuario reg = new Usuario()
                 {
                     idUsuario = dr.GetString(0),
