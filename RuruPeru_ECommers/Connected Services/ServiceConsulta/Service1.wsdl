@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:60716/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:60716/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:60716/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CONSULTA" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Consulta_ListarUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ListarUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ListarClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarClientes" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ListarClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ListarProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ListarProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ListarProductos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProductos" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ListarProductos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ListaCategoriaProd_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCategoriaProd" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ListaCategoriaProd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCategoriaProdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ListarEstadoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEstadoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="Consulta_ListarEstadoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEstadoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Consulta">
+    <wsdl:operation name="ListarUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/Consulta/ListarUsuarios" message="tns:Consulta_ListarUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Consulta/ListarUsuariosResponse" message="tns:Consulta_ListarUsuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/Consulta/ListarClientes" message="tns:Consulta_ListarClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Consulta/ListarClientesResponse" message="tns:Consulta_ListarClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/Consulta/ListarProveedor" message="tns:Consulta_ListarProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Consulta/ListarProveedorResponse" message="tns:Consulta_ListarProveedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarProductos">
+      <wsdl:input wsaw:Action="http://tempuri.org/Consulta/ListarProductos" message="tns:Consulta_ListarProductos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Consulta/ListarProductosResponse" message="tns:Consulta_ListarProductos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaCategoriaProd">
+      <wsdl:input wsaw:Action="http://tempuri.org/Consulta/ListaCategoriaProd" message="tns:Consulta_ListaCategoriaProd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Consulta/ListaCategoriaProdResponse" message="tns:Consulta_ListaCategoriaProd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstadoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/Consulta/ListarEstadoUsuario" message="tns:Consulta_ListarEstadoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Consulta/ListarEstadoUsuarioResponse" message="tns:Consulta_ListarEstadoUsuario_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Consulta" type="tns:Consulta">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/Consulta/ListarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientes">
+      <soap:operation soapAction="http://tempuri.org/Consulta/ListarClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarProveedor">
+      <soap:operation soapAction="http://tempuri.org/Consulta/ListarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarProductos">
+      <soap:operation soapAction="http://tempuri.org/Consulta/ListarProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaCategoriaProd">
+      <soap:operation soapAction="http://tempuri.org/Consulta/ListaCategoriaProd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstadoUsuario">
+      <soap:operation soapAction="http://tempuri.org/Consulta/ListarEstadoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_Consulta" binding="tns:BasicHttpBinding_Consulta">
+      <soap:address location="http://localhost:60716/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
