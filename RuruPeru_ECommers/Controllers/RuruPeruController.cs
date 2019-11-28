@@ -13,7 +13,7 @@ namespace RuruPeru_ECommers.Controllers
     public class RuruPeruController : Controller
     {
 
-        Service1Client service = new Service1Client();
+        Service1Client serviceConsulta = new Service1Client();
 
 
         // GET: RuruPeru
