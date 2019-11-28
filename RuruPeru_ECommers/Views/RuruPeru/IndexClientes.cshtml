@@ -1,0 +1,69 @@
+﻿@model IEnumerable<RuruPeru_ECommers.ServiceConsulta.Cliente>
+
+@{
+    ViewBag.Title = "IndexClientes";
+}
+
+<h2>IndexClientes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.apeCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcionEstado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaNacCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fotoUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomUsuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.apeCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcionEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaNacCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fotoUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomUsuario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

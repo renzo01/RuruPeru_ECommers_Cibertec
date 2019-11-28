@@ -68,7 +68,7 @@
     <Compile Include="Consulta.svc.cs">
       <DependentUpon>Consulta.svc</DependentUpon>
     </Compile>
-    <Compile Include="IService1.cs" />
+    <Compile Include="Consulta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

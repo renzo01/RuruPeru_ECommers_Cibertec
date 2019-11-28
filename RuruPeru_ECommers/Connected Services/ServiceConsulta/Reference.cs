@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RuruPeru_ECommers.ServiceReference1 {
+namespace RuruPeru_ECommers.ServiceConsulta {
     using System.Runtime.Serialization;
     using System;
     
@@ -135,9 +135,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         private string apeClienteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-<<<<<<< HEAD
-        private string fechaNacClienteField;
-=======
         private string descripcionEstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -145,7 +142,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string fotoUsuarioField;
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string idClienteField;
@@ -153,12 +149,9 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string idUsuarioField;
         
-<<<<<<< HEAD
-=======
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nomUsuarioField;
         
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -183,9 +176,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public string fechaNacCliente {
-=======
         public string descripcionEstado {
             get {
                 return this.descripcionEstadoField;
@@ -200,16 +190,11 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime fechaNacCliente {
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
             get {
                 return this.fechaNacClienteField;
             }
             set {
-<<<<<<< HEAD
-                if ((object.ReferenceEquals(this.fechaNacClienteField, value) != true)) {
-=======
                 if ((this.fechaNacClienteField.Equals(value) != true)) {
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
                     this.fechaNacClienteField = value;
                     this.RaisePropertyChanged("fechaNacCliente");
                 }
@@ -217,8 +202,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-=======
         public string fotoUsuario {
             get {
                 return this.fotoUsuarioField;
@@ -232,7 +215,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         public string idCliente {
             get {
                 return this.idClienteField;
@@ -258,8 +240,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
             }
         }
         
-<<<<<<< HEAD
-=======
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string nomUsuario {
             get {
@@ -273,7 +253,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
             }
         }
         
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -294,12 +273,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-<<<<<<< HEAD
-        private string idProvField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nomProvField;
-=======
         private string descripcionProveedorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -313,7 +286,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string rucProveedorField;
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -326,16 +298,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public string idProv {
-            get {
-                return this.idProvField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.idProvField, value) != true)) {
-                    this.idProvField = value;
-                    this.RaisePropertyChanged("idProv");
-=======
         public string descripcionProveedor {
             get {
                 return this.descripcionProveedorField;
@@ -344,22 +306,11 @@ namespace RuruPeru_ECommers.ServiceReference1 {
                 if ((object.ReferenceEquals(this.descripcionProveedorField, value) != true)) {
                     this.descripcionProveedorField = value;
                     this.RaisePropertyChanged("descripcionProveedor");
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public string nomProv {
-            get {
-                return this.nomProvField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nomProvField, value) != true)) {
-                    this.nomProvField = value;
-                    this.RaisePropertyChanged("nomProv");
-=======
         public string dniProveedor {
             get {
                 return this.dniProveedorField;
@@ -407,7 +358,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
                 if ((object.ReferenceEquals(this.rucProveedorField, value) != true)) {
                     this.rucProveedorField = value;
                     this.RaisePropertyChanged("rucProveedor");
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
                 }
             }
         }
@@ -432,17 +382,10 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-<<<<<<< HEAD
-        private string descripcionProductoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idCategoriaField;
-=======
         private string descripcionCategoriaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string descripcionProductoField;
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string idProductoField;
@@ -473,16 +416,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public string descripcionProducto {
-            get {
-                return this.descripcionProductoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.descripcionProductoField, value) != true)) {
-                    this.descripcionProductoField = value;
-                    this.RaisePropertyChanged("descripcionProducto");
-=======
         public string descripcionCategoria {
             get {
                 return this.descripcionCategoriaField;
@@ -491,22 +424,11 @@ namespace RuruPeru_ECommers.ServiceReference1 {
                 if ((object.ReferenceEquals(this.descripcionCategoriaField, value) != true)) {
                     this.descripcionCategoriaField = value;
                     this.RaisePropertyChanged("descripcionCategoria");
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public int idCategoria {
-            get {
-                return this.idCategoriaField;
-            }
-            set {
-                if ((this.idCategoriaField.Equals(value) != true)) {
-                    this.idCategoriaField = value;
-                    this.RaisePropertyChanged("idCategoria");
-=======
         public string descripcionProducto {
             get {
                 return this.descripcionProductoField;
@@ -515,7 +437,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
                 if ((object.ReferenceEquals(this.descripcionProductoField, value) != true)) {
                     this.descripcionProductoField = value;
                     this.RaisePropertyChanged("descripcionProducto");
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
                 }
             }
         }
@@ -610,37 +531,18 @@ namespace RuruPeru_ECommers.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-<<<<<<< HEAD
-    [System.Runtime.Serialization.DataContractAttribute(Name="ItemProducto", Namespace="http://schemas.datacontract.org/2004/07/CONSULTA")]
-    [System.SerializableAttribute()]
-    public partial class ItemProducto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-=======
     [System.Runtime.Serialization.DataContractAttribute(Name="Categoria", Namespace="http://schemas.datacontract.org/2004/07/CONSULTA")]
     [System.SerializableAttribute()]
     public partial class Categoria : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-<<<<<<< HEAD
-        private int cantidadProductoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string idProductoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal montoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal precioProductoField;
-=======
         private string descripcionCategoriaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private short idCategoriaField;
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -653,16 +555,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public int cantidadProducto {
-            get {
-                return this.cantidadProductoField;
-            }
-            set {
-                if ((this.cantidadProductoField.Equals(value) != true)) {
-                    this.cantidadProductoField = value;
-                    this.RaisePropertyChanged("cantidadProducto");
-=======
         public string descripcionCategoria {
             get {
                 return this.descripcionCategoriaField;
@@ -671,22 +563,11 @@ namespace RuruPeru_ECommers.ServiceReference1 {
                 if ((object.ReferenceEquals(this.descripcionCategoriaField, value) != true)) {
                     this.descripcionCategoriaField = value;
                     this.RaisePropertyChanged("descripcionCategoria");
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public string idProducto {
-            get {
-                return this.idProductoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.idProductoField, value) != true)) {
-                    this.idProductoField = value;
-                    this.RaisePropertyChanged("idProducto");
-=======
         public short idCategoria {
             get {
                 return this.idCategoriaField;
@@ -695,22 +576,10 @@ namespace RuruPeru_ECommers.ServiceReference1 {
                 if ((this.idCategoriaField.Equals(value) != true)) {
                     this.idCategoriaField = value;
                     this.RaisePropertyChanged("idCategoria");
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
                 }
             }
         }
         
-<<<<<<< HEAD
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal monto {
-            get {
-                return this.montoField;
-            }
-            set {
-                if ((this.montoField.Equals(value) != true)) {
-                    this.montoField = value;
-                    this.RaisePropertyChanged("monto");
-=======
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -755,22 +624,11 @@ namespace RuruPeru_ECommers.ServiceReference1 {
                 if ((object.ReferenceEquals(this.descripcionEstadoField, value) != true)) {
                     this.descripcionEstadoField = value;
                     this.RaisePropertyChanged("descripcionEstado");
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public decimal precioProducto {
-            get {
-                return this.precioProductoField;
-            }
-            set {
-                if ((this.precioProductoField.Equals(value) != true)) {
-                    this.precioProductoField = value;
-                    this.RaisePropertyChanged("precioProducto");
-=======
         public short idEstadoUsuario {
             get {
                 return this.idEstadoUsuarioField;
@@ -779,7 +637,6 @@ namespace RuruPeru_ECommers.ServiceReference1 {
                 if ((this.idEstadoUsuarioField.Equals(value) != true)) {
                     this.idEstadoUsuarioField = value;
                     this.RaisePropertyChanged("idEstadoUsuario");
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
                 }
             }
         }
@@ -795,115 +652,53 @@ namespace RuruPeru_ECommers.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-<<<<<<< HEAD
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
-    public interface IService1 {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ListarClientes", ReplyAction="http://tempuri.org/IService1/ListarClientesResponse")]
-        RuruPeru_ECommers.ServiceReference1.Cliente[] ListarClientes();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ListarClientes", ReplyAction="http://tempuri.org/IService1/ListarClientesResponse")]
-        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Cliente[]> ListarClientesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ListarProveedor", ReplyAction="http://tempuri.org/IService1/ListarProveedorResponse")]
-        RuruPeru_ECommers.ServiceReference1.Proveedor[] ListarProveedor();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ListarProveedor", ReplyAction="http://tempuri.org/IService1/ListarProveedorResponse")]
-        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Proveedor[]> ListarProveedorAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ListarProductos", ReplyAction="http://tempuri.org/IService1/ListarProductosResponse")]
-        RuruPeru_ECommers.ServiceReference1.Producto[] ListarProductos();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ListarProductos", ReplyAction="http://tempuri.org/IService1/ListarProductosResponse")]
-        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Producto[]> ListarProductosAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ActualizarStock", ReplyAction="http://tempuri.org/IService1/ActualizarStockResponse")]
-        string ActualizarStock(RuruPeru_ECommers.ServiceReference1.ItemProducto reg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ActualizarStock", ReplyAction="http://tempuri.org/IService1/ActualizarStockResponse")]
-        System.Threading.Tasks.Task<string> ActualizarStockAsync(RuruPeru_ECommers.ServiceReference1.ItemProducto reg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RealizarVenta", ReplyAction="http://tempuri.org/IService1/RealizarVentaResponse")]
-        string RealizarVenta(string idCliente, RuruPeru_ECommers.ServiceReference1.ItemProducto[] items);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RealizarVenta", ReplyAction="http://tempuri.org/IService1/RealizarVentaResponse")]
-        System.Threading.Tasks.Task<string> RealizarVentaAsync(string idCliente, RuruPeru_ECommers.ServiceReference1.ItemProducto[] items);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : RuruPeru_ECommers.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
-=======
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.Consulta")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceConsulta.Consulta")]
     public interface Consulta {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListarUsuarios", ReplyAction="http://tempuri.org/Consulta/ListarUsuariosResponse")]
-        RuruPeru_ECommers.ServiceReference1.Usuario[] ListarUsuarios();
+        RuruPeru_ECommers.ServiceConsulta.Usuario[] ListarUsuarios();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListarUsuarios", ReplyAction="http://tempuri.org/Consulta/ListarUsuariosResponse")]
-        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Usuario[]> ListarUsuariosAsync();
+        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.Usuario[]> ListarUsuariosAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListarClientes", ReplyAction="http://tempuri.org/Consulta/ListarClientesResponse")]
-        RuruPeru_ECommers.ServiceReference1.Cliente[] ListarClientes();
+        RuruPeru_ECommers.ServiceConsulta.Cliente[] ListarClientes();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListarClientes", ReplyAction="http://tempuri.org/Consulta/ListarClientesResponse")]
-        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Cliente[]> ListarClientesAsync();
+        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.Cliente[]> ListarClientesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListarProveedor", ReplyAction="http://tempuri.org/Consulta/ListarProveedorResponse")]
-        RuruPeru_ECommers.ServiceReference1.Proveedor[] ListarProveedor();
+        RuruPeru_ECommers.ServiceConsulta.Proveedor[] ListarProveedor();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListarProveedor", ReplyAction="http://tempuri.org/Consulta/ListarProveedorResponse")]
-        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Proveedor[]> ListarProveedorAsync();
+        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.Proveedor[]> ListarProveedorAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListarProductos", ReplyAction="http://tempuri.org/Consulta/ListarProductosResponse")]
-        RuruPeru_ECommers.ServiceReference1.Producto[] ListarProductos();
+        RuruPeru_ECommers.ServiceConsulta.Producto[] ListarProductos();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListarProductos", ReplyAction="http://tempuri.org/Consulta/ListarProductosResponse")]
-        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Producto[]> ListarProductosAsync();
+        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.Producto[]> ListarProductosAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListaCategoriaProd", ReplyAction="http://tempuri.org/Consulta/ListaCategoriaProdResponse")]
-        RuruPeru_ECommers.ServiceReference1.Categoria[] ListaCategoriaProd();
+        RuruPeru_ECommers.ServiceConsulta.Categoria[] ListaCategoriaProd();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListaCategoriaProd", ReplyAction="http://tempuri.org/Consulta/ListaCategoriaProdResponse")]
-        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Categoria[]> ListaCategoriaProdAsync();
+        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.Categoria[]> ListaCategoriaProdAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListarEstadoUsuario", ReplyAction="http://tempuri.org/Consulta/ListarEstadoUsuarioResponse")]
-        RuruPeru_ECommers.ServiceReference1.EstadoUsuario[] ListarEstadoUsuario();
+        RuruPeru_ECommers.ServiceConsulta.EstadoUsuario[] ListarEstadoUsuario();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Consulta/ListarEstadoUsuario", ReplyAction="http://tempuri.org/Consulta/ListarEstadoUsuarioResponse")]
-        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.EstadoUsuario[]> ListarEstadoUsuarioAsync();
+        System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.EstadoUsuario[]> ListarEstadoUsuarioAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ConsultaChannel : RuruPeru_ECommers.ServiceReference1.Consulta, System.ServiceModel.IClientChannel {
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
+    public interface ConsultaChannel : RuruPeru_ECommers.ServiceConsulta.Consulta, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-<<<<<<< HEAD
-    public partial class Service1Client : System.ServiceModel.ClientBase<RuruPeru_ECommers.ServiceReference1.IService1>, RuruPeru_ECommers.ServiceReference1.IService1 {
-        
-        public Service1Client() {
-        }
-        
-        public Service1Client(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public Service1Client(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public Service1Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-=======
-    public partial class ConsultaClient : System.ServiceModel.ClientBase<RuruPeru_ECommers.ServiceReference1.Consulta>, RuruPeru_ECommers.ServiceReference1.Consulta {
+    public partial class ConsultaClient : System.ServiceModel.ClientBase<RuruPeru_ECommers.ServiceConsulta.Consulta>, RuruPeru_ECommers.ServiceConsulta.Consulta {
         
         public ConsultaClient() {
         }
@@ -924,70 +719,52 @@ namespace RuruPeru_ECommers.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public RuruPeru_ECommers.ServiceReference1.Usuario[] ListarUsuarios() {
+        public RuruPeru_ECommers.ServiceConsulta.Usuario[] ListarUsuarios() {
             return base.Channel.ListarUsuarios();
         }
         
-        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Usuario[]> ListarUsuariosAsync() {
+        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.Usuario[]> ListarUsuariosAsync() {
             return base.Channel.ListarUsuariosAsync();
         }
         
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
-        public RuruPeru_ECommers.ServiceReference1.Cliente[] ListarClientes() {
+        public RuruPeru_ECommers.ServiceConsulta.Cliente[] ListarClientes() {
             return base.Channel.ListarClientes();
         }
         
-        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Cliente[]> ListarClientesAsync() {
+        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.Cliente[]> ListarClientesAsync() {
             return base.Channel.ListarClientesAsync();
         }
         
-        public RuruPeru_ECommers.ServiceReference1.Proveedor[] ListarProveedor() {
+        public RuruPeru_ECommers.ServiceConsulta.Proveedor[] ListarProveedor() {
             return base.Channel.ListarProveedor();
         }
         
-        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Proveedor[]> ListarProveedorAsync() {
+        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.Proveedor[]> ListarProveedorAsync() {
             return base.Channel.ListarProveedorAsync();
         }
         
-        public RuruPeru_ECommers.ServiceReference1.Producto[] ListarProductos() {
+        public RuruPeru_ECommers.ServiceConsulta.Producto[] ListarProductos() {
             return base.Channel.ListarProductos();
         }
         
-        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Producto[]> ListarProductosAsync() {
+        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.Producto[]> ListarProductosAsync() {
             return base.Channel.ListarProductosAsync();
         }
         
-<<<<<<< HEAD
-        public string ActualizarStock(RuruPeru_ECommers.ServiceReference1.ItemProducto reg) {
-            return base.Channel.ActualizarStock(reg);
-        }
-        
-        public System.Threading.Tasks.Task<string> ActualizarStockAsync(RuruPeru_ECommers.ServiceReference1.ItemProducto reg) {
-            return base.Channel.ActualizarStockAsync(reg);
-        }
-        
-        public string RealizarVenta(string idCliente, RuruPeru_ECommers.ServiceReference1.ItemProducto[] items) {
-            return base.Channel.RealizarVenta(idCliente, items);
-        }
-        
-        public System.Threading.Tasks.Task<string> RealizarVentaAsync(string idCliente, RuruPeru_ECommers.ServiceReference1.ItemProducto[] items) {
-            return base.Channel.RealizarVentaAsync(idCliente, items);
-=======
-        public RuruPeru_ECommers.ServiceReference1.Categoria[] ListaCategoriaProd() {
+        public RuruPeru_ECommers.ServiceConsulta.Categoria[] ListaCategoriaProd() {
             return base.Channel.ListaCategoriaProd();
         }
         
-        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.Categoria[]> ListaCategoriaProdAsync() {
+        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.Categoria[]> ListaCategoriaProdAsync() {
             return base.Channel.ListaCategoriaProdAsync();
         }
         
-        public RuruPeru_ECommers.ServiceReference1.EstadoUsuario[] ListarEstadoUsuario() {
+        public RuruPeru_ECommers.ServiceConsulta.EstadoUsuario[] ListarEstadoUsuario() {
             return base.Channel.ListarEstadoUsuario();
         }
         
-        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceReference1.EstadoUsuario[]> ListarEstadoUsuarioAsync() {
+        public System.Threading.Tasks.Task<RuruPeru_ECommers.ServiceConsulta.EstadoUsuario[]> ListarEstadoUsuarioAsync() {
             return base.Channel.ListarEstadoUsuarioAsync();
->>>>>>> b8d3d8b664242b32ac9093c9c1a4653e2ad1fa6d
         }
     }
 }

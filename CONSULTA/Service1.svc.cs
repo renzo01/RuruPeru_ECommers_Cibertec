@@ -15,78 +15,81 @@ namespace CONSULTA
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
-    public class Service1 : IService1
+    public class Service1 : Consulta
     {
 
-        SqlConnection cn = new SqlConnection(
-            ConfigurationManager.ConnectionStrings["sqlCon"].ConnectionString);
-
-        public string ActualizarStock(ItemProducto reg)
+        SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["RuruPeruDB"].ConnectionString);
+        public List<Categoria> ListaCategoriaProd()
         {
-
-            string mensaje = "";
-
-            if(reg == null)
+            List<Categoria> temp = new List<Categoria>();
+            SqlCommand cmd = new SqlCommand("usp_listar_categoria", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                return mensaje = "El producto que se quiere actualizar se encuenta vacio";
+                Categoria reg = new Categoria
+                {
+                    idCategoria = dr.GetInt16(0),
+                    descripcionCategoria = dr.GetString(1)
+                };
             }
-
-            if(reg.cantidadProducto < 1)
-            {
-                return mensaje = "El producto pedido no tiene una cantidad valida -> [cantidad < 1] ";
-            }
-
-            // 20 > 20
-
-            if(reg.cantidadProducto > 
-                ListarProductos().Where(x => x.idProducto == reg.idProducto).FirstOrDefault().stockProducto)
-            {
-                return mensaje = "La cantidad solicitada por el cliente supera el stock actual del producto";
-            }
-
-            try
-            {
-
-                cn.Open();
-
-                SqlCommand cmd = new SqlCommand(
-                    "update tb_Producto set stockProducto = stockProducto - @stock where idProducto = @idprod;", cn);
-
-                cmd.Parameters.AddWithValue("@stock", reg.cantidadProducto);
-                cmd.Parameters.AddWithValue("@idprod", reg.idProducto);
-
-                int rs = cmd.ExecuteNonQuery();
-
-                mensaje = "Filas afectadas(" + rs + "): El stock del producto " + reg.idProducto + " fue modificado";
-
-            }
-            catch(SqlException e)
-            {
-                mensaje = e.Message;
-            }
-            finally
-            {
-                cn.Close();
-            }
-
-            return mensaje;
+            dr.Close(); cn.Close();
+            return temp;
         }
 
         public List<Cliente> ListarClientes()
         {
-            throw new NotImplementedException();
+            List<Cliente> temp = new List<Cliente>();
+            SqlCommand cmd = new SqlCommand("usp_listar_Cliente", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Cliente reg = new Cliente()
+                {
+                    idCliente = dr.GetString(0),
+                    nomUsuario = dr.GetString(1),
+                    apeCliente = dr.GetString(2),
+                    fechaNacCliente = dr.GetDateTime(3),
+                    descripcionEstado = dr.GetString(4),
+                    idUsuario = dr.GetString(5),
+                    fotoUsuario = dr.GetString(6)
+                };
+                temp.Add(reg);
+            }
+            dr.Close(); cn.Close();
+            return temp;
+        }
+
+        public List<EstadoUsuario> ListarEstadoUsuario()
+        {
+            List<EstadoUsuario> temp = new List<EstadoUsuario>();
+            SqlCommand cmd = new SqlCommand("usp_listar_EstadoUsuario", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                EstadoUsuario reg = new EstadoUsuario()
+                {
+                    idEstadoUsuario = dr.GetInt16(0),
+                    descripcionEstado = dr.GetString(1)
+                };
+                temp.Add(reg);
+            }
+            dr.Close(); cn.Close();
+            return temp;
         }
 
         public List<Producto> ListarProductos()
         {
-            List<Producto> temporal = new List<Producto>();
-
-            SqlCommand cmd = new SqlCommand("select * from tb_Producto", cn);
-
+            List<Producto> temp = new List<Producto>();
+            SqlCommand cmd = new SqlCommand("usp_listar_Producto", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
             cn.Open();
-
             SqlDataReader dr = cmd.ExecuteReader();
-
             while (dr.Read())
             {
                 Producto reg = new Producto()
@@ -97,128 +100,59 @@ namespace CONSULTA
                     precioProducto = dr.GetDecimal(3),
                     stockProducto = dr.GetInt32(4),
                     imgProducto = dr.GetString(5),
-                    idCategoria = dr.GetInt32(6),
+                    descripcionCategoria = dr.GetString(6),
                     idProveedor = dr.GetString(7)
                 };
-
-                temporal.Add(reg);
+                temp.Add(reg);
             }
-
-            dr.Close();cn.Close();
-
-            return temporal;
+            dr.Close(); cn.Close();
+            return temp;
         }
 
         public List<Proveedor> ListarProveedor()
         {
-            throw new NotImplementedException();
-        }
-
-        public string RealizarVenta(string idCliente, List<ItemProducto> items)
-        {
-
-            string mensaje = "";
-            string idfactura = generarIdFactura();
-
-            int idEstadoFactura = generarIdEstadoFactura();
-            
-
-            if (items == null)
+            List<Proveedor> temp = new List<Proveedor>();
+            SqlCommand cmd = new SqlCommand("usp_listar_Proveedor", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                return mensaje = "La lista de Items esta vacia";
-            }
-
-            try
-            {
-
-                SqlCommand cmd = new SqlCommand(
-                    "insert into tb_Factura values (@idfac,@monto,@fecha,@idEst,@idCli)", cn);
-
-                string date = DateTime.Now.ToString("yyyy-MM-dd");
-
-                decimal monto = items.Sum(x => x.monto);
-
-                cmd.Parameters.AddWithValue("@idfac", idfactura);
-                cmd.Parameters.AddWithValue("@monto", monto);
-                cmd.Parameters.AddWithValue("@fecha", date);
-                cmd.Parameters.AddWithValue("@idEst", idEstadoFactura);
-                cmd.Parameters.AddWithValue("@idCli", idCliente);
-
-                cn.Open();
-
-                cmd.ExecuteNonQuery();
-
-                foreach (var it in items)
+                Proveedor reg = new Proveedor()
                 {
-
-                    cmd = new SqlCommand("insert into tb_Detalle_Factura values (@idEst,@idPro,@can)", cn);
-
-                    cmd.Parameters.AddWithValue("@idEst", idEstadoFactura);
-                    cmd.Parameters.AddWithValue("@idPro", it.idProducto);
-                    cmd.Parameters.AddWithValue("@can", it.cantidadProducto);
-
-                    cmd.ExecuteNonQuery();
-
-                }
-               
-                mensaje = "Pedido registrado";
+                    idProveedor = dr.GetString(0),
+                    descripcionProveedor = dr.GetString(1),
+                    rucProveedor = dr.GetString(2),
+                    dniProveedor = dr.GetString(3),
+                    idUsuario = dr.GetString(4)
+                };
+                temp.Add(reg);
             }
-            catch (SqlException e)
-            {
-                mensaje = "No se pudo registrar el pedido : " + e.Message;
-            }
-            finally
-            {
-                cn.Close();
-            }
-
-            return mensaje;
+            dr.Close(); cn.Close();
+            return temp;
         }
 
-        //metodo del autogenerado
-
-        string generarIdFactura()
+        public List<Usuario> ListarUsuarios()
         {
-            string cod = "";
-            SqlCommand cmd;
-            cmd = new SqlCommand("select MAX(idFactura) from tb_Factura", cn);
-            cmd.CommandType = CommandType.Text;
+            List<Usuario> temp = new List<Usuario>();
+            SqlCommand cmd = new SqlCommand("usp_listar_Usuarios", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
             cn.Open();
-
-            string result = cmd.ExecuteScalar().ToString();
-
-            if(result != "")
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                cod = "FAC" + (Convert.ToInt32(result.Substring(3)) + 1).ToString("D5");
+                Usuario reg = new Usuario()
+                {
+                    idUsuario = dr.GetString(0),
+                    nomUsuario = dr.GetString(1),
+                    nomDistrito = dr.GetString(2),
+                    fotoUsuario = dr.GetString(3),
+                    descripcionEstado = dr.GetString(4)
+                };
+                temp.Add(reg);
             }
-            else
-            {
-                cod = "FAC00001";
-            }
-
-            cn.Close();
-
-            return cod;
-
+            dr.Close(); cn.Close();
+            return temp;
         }
-
-        int generarIdEstadoFactura()
-        {
-            int cod = 0;
-            SqlCommand cmd;
-            cmd = new SqlCommand("select count(*) from tb_Factura", cn);
-            cmd.CommandType = CommandType.Text;
-            cn.Open();
-
-            cod = (int)cmd.ExecuteScalar();
-
-            cod++;
-
-            cn.Close();
-
-            return cod;
-
-        }
-
     }
 }

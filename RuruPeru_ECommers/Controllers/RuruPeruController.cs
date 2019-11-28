@@ -5,78 +5,150 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Web;
 using System.Web.Mvc;
-using RuruPeru_ECommers.ServiceReference1;
+using RuruPeru_ECommers.ServiceConsulta;
+using System.Net.Http;
 
 namespace RuruPeru_ECommers.Controllers
 {
 
     public class RuruPeruController : Controller
     {
-
-        Service1Client service = new Service1Client();
-
-
+        //Direcciones para las apis de listado
+        private const string direccionListadoUsuario = "api/listadoUsuario";
+        private const string direccionListadoClientes = "api/listadoClientes";
+        private const string direccionListadoProductos = "api/listadoProductos";
+        private const string direccionListadoEstadoUsuario = "api/listadoEstadoUsuario";
+        private const string direccionListadoCategoriaProd = "api/listadoCategoriaProd";
+        //Direccion de la api
+        private const string urlApi = "https://localhost:44369/";
         // GET: RuruPeru
-        public ActionResult Index()
-        {
-
-            /*
-
-            Prueba de funcionamiento de "Realizar Venta"
-
-            string idcli = "CLI00001";
-
-            List<ItemProducto> items = new List<ItemProducto>();
-
-            items.Add(new ItemProducto() {
-                idProducto = "PRO00002",
-                precioProducto = 22.00m,
-                cantidadProducto = 3
-            });
-
-            items.Add(new ItemProducto()
-            {
-                idProducto = "PRO00004",
-                precioProducto = 42.00m,
-                cantidadProducto = 5
-            });
-
-            System.Diagnostics.Debug.WriteLine(service.RealizarVenta(idcli, items.ToArray()));*/
-
-            return View(service.ListarProductos());
-        }
-
-        //  Prueba de funcionamiento de "Actualizar Stock"
-
-        public ActionResult Stock(string id)
-        {
-
-            ViewBag.mensaje = "";
-
-            if(id == null)
-            {
-                return RedirectToAction("Index");
+        ConsultaClient servicioConsulta = new ConsultaClient();
+        //Listados para usar en los combobox
+        public IEnumerable<ServiceConsulta.EstadoUsuario> listadoEstadoUsuario() {
+            List<ServiceConsulta.EstadoUsuario> listadoEstadoUsuario = new List<ServiceConsulta.EstadoUsuario>();
+            using (HttpClient servicio = new HttpClient()) {
+                servicio.BaseAddress = new Uri(urlApi);
+                var tarea = servicio.GetAsync(direccionListadoEstadoUsuario);
+                tarea.Wait();
+                var resultado = tarea.Result;
+                if (resultado.IsSuccessStatusCode)
+                {
+                    var listadoTemporal = resultado.Content.ReadAsAsync(typeof(List<ServiceConsulta.EstadoUsuario>));
+                    listadoTemporal.Wait();
+                    listadoEstadoUsuario = (List<ServiceConsulta.EstadoUsuario>)listadoTemporal.Result;
+                }
+                else {
+                    listadoEstadoUsuario = new List<ServiceConsulta.EstadoUsuario>();
+                }
             }
-
-            Producto item = service.ListarProductos().Where(x => x.idProducto == id).FirstOrDefault();
-
-            ItemProducto reg = new ItemProducto() {
-                idProducto = item.idProducto,
-                precioProducto = item.precioProducto
-            };
-
-
-            return View(reg);
+                return listadoEstadoUsuario;
         }
-
-        [HttpPost]
-        public ActionResult Stock(ItemProducto reg)
+        public IEnumerable<ServiceConsulta.Categoria> listadoCategoriaProd()
         {
-
-            ViewBag.mensaje = service.ActualizarStock(reg);
-
-            return View(reg);
+            List<ServiceConsulta.Categoria> listadoCategoriaProd = new List<ServiceConsulta.Categoria>();
+            using (HttpClient servicio = new HttpClient())
+            {
+                servicio.BaseAddress = new Uri(urlApi);
+                var tarea = servicio.GetAsync(direccionListadoCategoriaProd);
+                tarea.Wait();
+                var resultado = tarea.Result;
+                if (resultado.IsSuccessStatusCode)
+                {
+                    var listadoTemporal = resultado.Content.ReadAsAsync(typeof(List<ServiceConsulta.Categoria>));
+                    listadoTemporal.Wait();
+                    listadoCategoriaProd = (List<ServiceConsulta.Categoria>)listadoTemporal.Result;
+                }
+                else
+                {
+                    listadoCategoriaProd = new List<ServiceConsulta.Categoria>();
+                }
+            }
+            return listadoCategoriaProd;
         }
-
+        public ActionResult IndexUsuario()
+        {
+            List<ServiceConsulta.Usuario> temp = new List<ServiceConsulta.Usuario>();
+            //indica que se va a usar un servicio que obtiene los datos de otra parte
+            using (HttpClient servicio = new HttpClient())
+            {
+                servicio.BaseAddress = new Uri(urlApi);
+                var tarea = servicio.GetAsync(direccionListadoUsuario);
+                tarea.Wait();
+                //guardamos el resultado del listado en una variables y verificamos si tiene datos
+                var resultado = tarea.Result;
+                if (resultado.IsSuccessStatusCode)
+                {
+                    var listado = resultado.Content.ReadAsAsync(typeof(List<ServiceConsulta.Usuario>));
+                    listado.Wait();
+                    //guardar la lista en la lista de retorno
+                    temp = (List<ServiceConsulta.Usuario>)listado.Result;
+                }
+                else {
+                    temp = new List<ServiceConsulta.Usuario>();
+                }
+            }
+                return View(temp);
+        }
+        public ActionResult IndexClientes() 
+        {
+            List<ServiceConsulta.Cliente> listadoCliente = new List<ServiceConsulta.Cliente>();
+            using (HttpClient servicio = new HttpClient()) {
+                servicio.BaseAddress = new Uri(urlApi);
+                var tarea = servicio.GetAsync(direccionListadoClientes);
+                tarea.Wait();
+                var resultado = tarea.Result;
+                if (resultado.IsSuccessStatusCode)
+                {
+                    var listadoTemporal = resultado.Content.ReadAsAsync(typeof(List<ServiceConsulta.Cliente>));
+                    listadoTemporal.Wait();
+                    listadoCliente = (List<ServiceConsulta.Cliente>)listadoTemporal.Result;
+                }
+                else {
+                    listadoCliente = new List<ServiceConsulta.Cliente>();
+                }
+                return View(listadoCliente);
+            }
+        }
+        public ActionResult IndexProveedor() {
+            List<ServiceConsulta.Proveedor> listadoProveedor = new List<ServiceConsulta.Proveedor>();
+            using (HttpClient servicio = new HttpClient())
+            {
+                servicio.BaseAddress = new Uri(urlApi);
+                var tarea = servicio.GetAsync(direccionListadoClientes);
+                tarea.Wait();
+                var resultado = tarea.Result;
+                if (resultado.IsSuccessStatusCode)
+                {
+                    var listadoTemporal = resultado.Content.ReadAsAsync(typeof(List<ServiceConsulta.Proveedor>));
+                    listadoTemporal.Wait();
+                    listadoProveedor = (List<ServiceConsulta.Proveedor>)listadoTemporal.Result;
+                }
+                else
+                {
+                    listadoProveedor = new List<ServiceConsulta.Proveedor>();
+                }
+                return View(listadoProveedor);
+            }
+        }
+        public ActionResult IndexProductos() {
+            List<ServiceConsulta.Producto> listadoProducto = new List<ServiceConsulta.Producto>();
+            using (HttpClient servicio = new HttpClient()) {
+                servicio.BaseAddress = new Uri(urlApi);
+                var tarea = servicio.GetAsync(direccionListadoProductos);
+                tarea.Wait();
+                var resultado = tarea.Result;
+                if (resultado.IsSuccessStatusCode)
+                {
+                    var listadoTemporal = resultado.Content.ReadAsAsync(typeof(List<ServiceConsulta.Producto>));
+                    listadoTemporal.Wait();
+                    listadoProducto = (List<ServiceConsulta.Producto>)listadoTemporal.Result;
+                }
+                else {
+                    listadoProducto = new List<ServiceConsulta.Producto>();
+                }
+                return View(listadoProducto);
+            }
+        }
+       
     }
 }

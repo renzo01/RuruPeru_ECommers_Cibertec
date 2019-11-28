@@ -28,7 +28,6 @@ namespace CONSULTA
         List<EstadoUsuario> ListarEstadoUsuario();
     }
     // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
-    [DataContract]
     public class Usuario
     {
         [DataMember]
@@ -90,8 +89,5 @@ namespace CONSULTA
         [DataMember] public Int16 idEstadoUsuario { get; set; }
         [DataMember] public string descripcionEstado { get; set; }
     }
-    public class EstadoUsuario { 
-        [DataMember] public Int16 idEstadoUsuario { get; set; }
-        [DataMember] public string descripcionEstado { get; set; }
-    }
+
 }
