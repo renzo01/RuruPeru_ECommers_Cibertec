@@ -65,6 +65,28 @@ namespace RuruPeru_ECommers.Controllers
             }
             return listadoCategoriaProd;
         }
+        public IEnumerable<ServiceConsulta.Producto> listadoProducto()
+        {
+            List<ServiceConsulta.Producto> listadoProducto = new List<ServiceConsulta.Producto>();
+            using(HttpClient servicio =  new HttpClient())
+            {
+                servicio.BaseAddress = new Uri(urlApi);
+                var tarea = servicio.GetAsync(direccionListadoProductos);
+                tarea.Wait();
+                var resultado = tarea.Result;
+                if (resultado.IsSuccessStatusCode)
+                {
+                    var listadoTemporal = resultado.Content.ReadAsAsync(typeof(List<ServiceConsulta.Categoria>));
+                    listadoTemporal.Wait();
+                    listadoProducto = (List<ServiceConsulta.Producto>)listadoTemporal.Result;
+                }
+                else
+                {
+                    listadoProducto = new List<Producto>();
+                }
+            }
+            return listadoProducto;
+        }
         public ActionResult IndexUsuario()
         {
             List<ServiceConsulta.Usuario> temp = new List<ServiceConsulta.Usuario>();
@@ -149,6 +171,10 @@ namespace RuruPeru_ECommers.Controllers
                 return View(listadoProducto);
             }
         }    
-       
+        public ActionResult EliminarProducto()
+        {
+            
+            return View();
+        }      
     }
 }
